@@ -1,8 +1,8 @@
 'use strict'
 
 module.exports = {
-  getNthFib: getNthFib,
-  getFibArray: getFibArray
+  getNthFib,
+  getFibArray
 }
 
 /**
@@ -11,7 +11,8 @@ module.exports = {
  * @param n integer index of the desired Fibonacci number in the Fibonacci sequence
  */
 function getNthFib (n) {
-  return 1
+  var arr = getFibArray(n)
+  return arr.pop()
 }
 
 /**
@@ -19,5 +20,20 @@ function getNthFib (n) {
  * @param n the integer index of the largest desired Fibonacci number in the Fibonacci sequence
  */
 function getFibArray (n) {
-  return []
+  let arr
+
+  if (n === 0) {
+    return [0]
+  }
+
+  arr = [0, 1]
+
+  if (n === 1) {
+    return arr
+  }
+
+  while (arr.length <= n) {
+    arr.push(arr[arr.length - 1] + arr[arr.length - 2])
+  }
+  return arr
 }
