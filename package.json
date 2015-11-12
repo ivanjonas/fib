@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "pretest": "standard **.js",
-    "test": "tape text/index.spec.js | faucet"
+    "test": "tape test/index.spec.js | faucet"
   },
   "repository": {
     "type": "git",
