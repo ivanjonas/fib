@@ -1,0 +1,23 @@
+{
+  "name": "fib",
+  "version": "0.1.0",
+  "description": "Simple code for weeding out silly developers like me",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "standard **.js",
+    "test": "tape text/index.spec.js | faucet"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonasninja/fib.git"
+  },
+  "keywords": [
+    "interview"
+  ],
+  "author": "jonas.ninja",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonasninja/fib/issues"
+  },
+  "homepage": "https://github.com/jonasninja/fib#readme"
+}
