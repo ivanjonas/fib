@@ -23,12 +23,21 @@ tape.test('Simple numbers work', function (t) {
   t.equal(fib.getNthFib(20), 6765)
 })
 
-tape.test('Bad numbers are rejected', function (t) {
-  t.plan(3)
+tape.test('Bad input is rejected', function (t) {
+  t.plan(8)
 
-  t.true(isNaN(fib.getNthFib(-1)))
+  t.equal(fib.getNthFib(), undefined) // undefined
 
-  t.true(isNaN(fib.getNthFib(1.5)))
+  t.equal(fib.getNthFib(null), undefined)
 
-  t.true(isNaN(fib.getNthFib('hello')))
+  t.equal(fib.getNthFib(NaN), undefined)
+
+  t.equal(fib.getNthFib(-1), undefined)
+
+  t.equal(fib.getNthFib(1.5), undefined)
+
+  t.equal(fib.getNthFib('hello'), undefined)
+
+  t.equal(fib.getNthFib(true), undefined)
+  t.equal(fib.getNthFib(false), undefined) // should not be like getNthFib(0)
 })
